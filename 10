@@ -1,0 +1,7 @@
+from nltk.corpus import names
+from nltk import FreqDist
+male_names = [name[-1] for name in names.words("male.txt")]
+female_names = [name[-1] for name in names.words("female.txt")]
+fdistM, fdistF = FreqDist(male_names), FreqDist(female_names)
+print(f'Мужские имена, топ-5 последних букв: {fdistM.most_common(5)}')
+print(f'Женские имена, топ-5 последних букв: {fdistF.most_common(5)}')
